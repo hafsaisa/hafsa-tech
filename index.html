@@ -8,7 +8,7 @@
   <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
 
   <style>
-    /* CSS Variables for Light/Dark mode */
+    /* CSS Variables */
     :root {
       --bg-gradient: linear-gradient(135deg, #f9e5f8, #f4d1f7);
       --text-color: #333;
@@ -27,7 +27,7 @@
       --toggle-bg: rgba(255,255,255,0.15);
     }
 
-    /* Animated background */
+    /* Animated Background */
     body {
       font-family: 'Poppins', Helvetica, Arial, sans-serif;
       margin: 0;
@@ -57,20 +57,20 @@
       position: fixed;
       top: 20px;
       right: 20px;
-      width: 50px;
-      height: 50px;
       border: none;
-      border-radius: 50%;
+      border-radius: 50px;
       cursor: pointer;
       background-color: var(--toggle-bg);
       color: var(--accent-color);
-      font-size: 1.4em;
+      font-size: 0.9em;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 10px 15px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: all 0.4s ease;
       z-index: 1000;
+      gap: 8px;
     }
     #mode-toggle:hover {
       transform: translateY(-2px);
@@ -231,12 +231,20 @@
       .header-image-wrapper {
         height: 200px;
       }
+      #mode-toggle {
+        top: 10px;
+        right: 10px;
+        font-size: 0.8em;
+        padding: 8px 12px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Toggle Button -->
-  <button id="mode-toggle"><i id="toggle-icon" class="fas fa-moon"></i></button>
+  <!-- Toggle Button with label -->
+  <button id="mode-toggle">
+    <i id="toggle-icon" class="fas fa-moon"></i> Light / Dark Mode
+  </button>
 
   <header>
     <div class="header-left">
