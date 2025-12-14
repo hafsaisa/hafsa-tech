@@ -4,108 +4,186 @@
   <title>Hafsa Issa | Portfolio</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-  
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+
   <style>
-    /* Font & Body */
-    body {
-      font-family: 'Poppins', Helvetica, Arial, sans-serif;
-      background-color: #f9f8fc;
-      color: #333;
-      margin: 0;
-      padding: 0;
+    /* CSS Variables for Light/Dark mode */
+    :root {
+      --bg-gradient: linear-gradient(135deg, #f9e5f8, #f4d1f7);
+      --text-color: #333;
+      --card-bg: rgba(255, 255, 255, 0.2);
+      --card-border: rgba(255, 255, 255, 0.3);
+      --accent-color: #b892d8;
+      --toggle-bg: rgba(255, 255, 255, 0.25);
     }
 
-    /* Header split layout */
+    body.dark-mode {
+      --bg-gradient: linear-gradient(135deg, #1e1e2f, #2c2546);
+      --text-color: #eee;
+      --card-bg: rgba(30,30,40,0.3);
+      --card-border: rgba(255,255,255,0.1);
+      --accent-color: #c7a1e2;
+      --toggle-bg: rgba(255,255,255,0.15);
+    }
+
+    /* Animated background */
+    body {
+      font-family: 'Poppins', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      min-height: 100vh;
+      transition: all 0.5s ease;
+      background: linear-gradient(270deg, #f9e5f8, #f4d1f7, #e0c4f3, #f9e5f8);
+      background-size: 800% 800%;
+      animation: gradientBG 20s ease infinite;
+    }
+
+    body.dark-mode {
+      background: linear-gradient(270deg, #1e1e2f, #2c2546, #3a2c52, #1e1e2f);
+      background-size: 800% 800%;
+      animation: gradientBG 25s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    /* Toggle Button */
+    #mode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      background-color: var(--toggle-bg);
+      color: var(--accent-color);
+      font-size: 1.4em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      z-index: 1000;
+    }
+    #mode-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    /* Header */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       max-width: 900px;
-      margin: 40px auto;
+      margin: 80px auto 40px auto;
       padding: 40px;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      border: 1px solid var(--card-border);
+      transition: all 0.5s ease;
     }
 
     .header-left {
       flex: 1;
-      background: linear-gradient(135deg, #c7a1e2, #b28edb);
-      padding: 40px;
-      border-radius: 20px 0 0 20px;
-      color: #4a4a4a;
+      padding-right: 20px;
     }
 
     .header-left h1 {
       margin: 0;
-      font-size: 3.4em;
+      font-size: 3em;
       font-family: 'Merriweather', serif;
     }
 
     .header-left p {
-      font-size: 1.4em;
+      font-size: 1.2em;
       margin-top: 10px;
-      font-family: 'Poppins', sans-serif;
     }
 
     .header-right {
       width: 160px;
-      height: 220px;       /* rectangle height for full-body photo */
-      background: #fff;
+      height: 220px;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 0 20px 20px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+      border: 1px solid var(--card-border);
+      transition: all 0.5s ease;
     }
 
     .header-image-wrapper {
       width: 140px;
-      height: 200px;       /* slightly smaller than container for padding */
+      height: 200px;
       overflow: hidden;
-      border-radius: 12px;  /* slight rounded corners */
+      border-radius: 12px; 
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     .header-image-wrapper img {
       width: 100%;
       height: 100%;
-      object-fit: cover;    /* fills rectangle nicely */
+      object-fit: cover;
       object-position: center;
     }
 
-    /* Section styling */
+    /* Sections */
     section {
       max-width: 800px;
       margin: 40px auto;
-      padding: 0 20px;
+      padding: 20px;
+      opacity: 0; /* initial hidden */
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     h2 {
-      color: #b892d8;
-      border-bottom: 2px solid #b892d8;
+      color: var(--accent-color);
+      border-bottom: 2px solid var(--accent-color);
       padding-bottom: 5px;
       font-weight: 600;
+      transition: color 0.5s ease;
     }
 
-    /* Cards */
+    /* Glass Cards */
     .card {
-      background-color: #ffffff;
+      background: var(--card-bg);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
       padding: 20px;
       margin: 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
     }
 
-    /* Accent for sections */
-    .accent {
-      background-color: #ede0f5;
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.12);
     }
 
     /* Links */
     a {
-      color: #b892d8;
+      color: var(--accent-color);
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
@@ -115,26 +193,25 @@
       text-decoration: underline;
     }
 
-    /* About Me layout */
-    .about {
-      line-height: 1.6;
-    }
-
     /* Footer */
     footer {
-      background-color: #b28edb;
-      color: #fff;
+      background: var(--card-bg);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-top: 1px solid var(--card-border);
+      color: var(--text-color);
       text-align: center;
       padding: 20px;
       font-size: 1em;
       margin-top: 40px;
+      transition: all 0.5s ease;
     }
     footer a {
-      color: #fff;
+      color: var(--accent-color);
       font-weight: 600;
     }
     footer a:hover {
-      color: #e0c6f0;
+      color: #9462c1;
     }
 
     /* Responsive */
@@ -158,6 +235,9 @@
   </style>
 </head>
 <body>
+  <!-- Toggle Button -->
+  <button id="mode-toggle"><i id="toggle-icon" class="fas fa-moon"></i></button>
+
   <header>
     <div class="header-left">
       <h1>Hafsa Issa</h1>
@@ -173,7 +253,7 @@
   <!-- About Me Section -->
   <section>
     <h2>About Me</h2>
-    <div class="about">
+    <div class="card">
       <p>
         Hi! I’m Hafsa Issa, an IT & CS graduate passionate about technology, programming, and AI. 
         I specialize in building practical projects like SomaliBot, a Somali language chatbot.
@@ -194,7 +274,7 @@
   <!-- Other Projects -->
   <section>
     <h2>Other Projects</h2>
-    <div class="card accent">
+    <div class="card">
       <p>More projects coming soon…</p>
     </div>
   </section>
@@ -202,7 +282,7 @@
   <!-- Contact Section -->
   <section>
     <h2>Contact</h2>
-    <div class="card accent">
+    <div class="card">
       <p>Email: <a href="mailto:hafsaissa759@gmail.com">hafsaissa759@gmail.com</a></p>
     </div>
   </section>
@@ -211,5 +291,34 @@
   <footer>
     Connect with me on <a href="https://www.linkedin.com/in/hafsa-isse/" target="_blank">LinkedIn</a> | Made by Hafsa Issa
   </footer>
+
+  <!-- JS for Toggle & Scroll Animations -->
+  <script>
+    // Light/Dark mode toggle
+    const toggleBtn = document.getElementById('mode-toggle');
+    const toggleIcon = document.getElementById('toggle-icon');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      if(document.body.classList.contains('dark-mode')){
+        toggleIcon.classList.remove('fa-moon');
+        toggleIcon.classList.add('fa-sun');
+      } else {
+        toggleIcon.classList.remove('fa-sun');
+        toggleIcon.classList.add('fa-moon');
+      }
+    });
+
+    // Scroll fade-in
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
