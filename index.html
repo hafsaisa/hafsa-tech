@@ -9,7 +9,7 @@
     /* Font & Body */
     body {
       font-family: 'Poppins', Helvetica, Arial, sans-serif;
-      background-color: #f9f8fc; /* very light lavender */
+      background-color: #f9f8fc;
       color: #333;
       margin: 0;
       padding: 0;
@@ -17,7 +17,7 @@
 
     /* Header with gradient and image */
     header {
-      background: linear-gradient(135deg, #c7a1e2, #b28edb); /* soft lavender gradient */
+      background: linear-gradient(135deg, #c7a1e2, #b28edb);
       color: #4a4a4a;
       padding: 60px 40px;
       display: flex;
@@ -29,36 +29,60 @@
       border-radius: 0 0 20px 20px;
     }
     .header-text {
-      max-width: 60%; /* allows space for image */
+      max-width: 60%;
     }
     .header-text h1 {
       margin: 0;
       font-size: 3.4em; 
       font-weight: 700;
-      font-family: 'Merriweather', serif; /* elegant, Times-like */
+      font-family: 'Merriweather', serif;
     }
     .header-text p {
       font-size: 1.4em;
       margin-top: 10px;
       font-weight: 500;
-      font-family: 'Poppins', sans-serif; /* clean subtitle */
+      font-family: 'Poppins', sans-serif;
     }
 
-    /* Profile image with hover animation */
-    .header-image {
+    /* Wrapper for circular image with animated gradient */
+    .header-image-wrapper {
       width: 140px;
       height: 140px;
       border-radius: 50%;
-       object-fit: contain;       /* zooms out to show entire image */
-       object-position: center;
-     
+      overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      border: 3px solid #fff;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .header-image:hover {
+    .header-image-wrapper:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .profile-gradient {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      padding: 3px; /* creates a subtle border effect */
+      background: linear-gradient(270deg, #b28edb, #c7a1e2, #ede0f5);
+      background-size: 600% 600%;
+      animation: gradientAnimation 15s ease infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 50%;
+    }
+
+    @keyframes gradientAnimation {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
     /* Section styling */
@@ -68,7 +92,7 @@
       padding: 0 20px;
     }
     h2 {
-      color: #b892d8; /* lavender headings */
+      color: #b892d8;
       border-bottom: 2px solid #b892d8;
       padding-bottom: 5px;
       font-weight: 600;
@@ -90,7 +114,7 @@
 
     /* Accent for sections */
     .accent {
-      background-color: #ede0f5; /* light lavender accent */
+      background-color: #ede0f5;
     }
 
     /* Links */
@@ -101,7 +125,7 @@
       transition: color 0.3s;
     }
     a:hover {
-      color: #9462c1; /* slightly darker lavender */
+      color: #9462c1;
       text-decoration: underline;
     }
 
@@ -112,7 +136,7 @@
 
     /* Footer */
     footer {
-      background-color: #b28edb; /* darker lavender footer */
+      background-color: #b28edb;
       color: #fff;
       text-align: center;
       padding: 20px;
@@ -139,7 +163,7 @@
       .header-text {
         max-width: 100%;
       }
-      .header-image {
+      .header-image-wrapper {
         margin-top: 20px;
       }
     }
@@ -151,7 +175,11 @@
       <h1>Hafsa Issa</h1>
       <p>IT & CS Graduate | Technology Enthusiast</p>
     </div>
-    <img src="Profile.JPG" alt="Hafsa Issa" class="header-image">
+    <div class="header-image-wrapper">
+      <div class="profile-gradient">
+        <img src="Profile.JPG" alt="Hafsa Issa" class="header-image">
+      </div>
+    </div>
   </header>
 
   <!-- About Me Section -->
