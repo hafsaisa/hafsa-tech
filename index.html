@@ -6,20 +6,18 @@
     /* Font & Body */
     body {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background-color: #fff8f9; /* soft pastel background */
-      color: #333;
+      background-color: #fffafc; /* very soft pastel pink */
+      color: #4a4a4a; /* dark gray for readability */
       margin: 0;
       padding: 0;
-      transition: background 0.3s;
     }
 
     /* Header */
     header {
-      background-color: #f7c6d0; /* soft pink */
-      color: white;
+      background-color: #f2d6dc; /* soft pastel pink */
+      color: #4a4a4a; /* dark text for contrast */
       text-align: center;
       padding: 60px 20px;
-      transition: background 0.3s;
     }
     header h1 {
       margin: 0;
@@ -38,11 +36,10 @@
       padding: 0 20px;
     }
     h2 {
-      color: #f48fb1; /* pastel pink for headings */
-      border-bottom: 2px solid #f48fb1;
+      color: #b78ca1; /* muted pastel pink */
+      border-bottom: 2px solid #b78ca1;
       padding-bottom: 5px;
       font-weight: 600;
-      transition: color 0.3s;
     }
 
     /* Cards */
@@ -51,28 +48,29 @@
       padding: 20px;
       margin: 20px 0;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-    }
-    /* Accent for future-ready sections */
-    .accent {
-      background-color: #ffd1dc; /* soft pastel accent */
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Accent for sections */
+    .accent {
+      background-color: #fce8ee; /* soft pastel accent */
     }
 
     /* Links */
     a {
-      color: #f48fb1;
+      color: #b78ca1;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
     }
     a:hover {
+      color: #a46d84; /* slightly darker on hover */
       text-decoration: underline;
-      color: #e91e63; /* darker pink on hover */
     }
 
     /* About Me layout */
@@ -91,7 +89,7 @@
 <body>
   <header>
     <h1>Hafsa</h1>
-    <p>IT & CS Graduate | SomaliBot Project</p>
+    <p>IT & CS Graduate</p>
   </header>
 
   <!-- About Me Section -->
