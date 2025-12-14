@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hafsa | Portfolio</title>
+  <title>Hafsa Issa | Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  
   <style>
     /* Font & Body */
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background-color: #fffafc; /* very soft pastel pink */
-      color: #4a4a4a; /* dark gray for readability */
+      font-family: 'Poppins', Helvetica, Arial, sans-serif;
+      background-color: #fff4f8; /* soft pastel pink background */
+      color: #333;
       margin: 0;
       padding: 0;
     }
 
     /* Header */
     header {
-      background-color: #f2d6dc; /* soft pastel pink */
-      color: #4a4a4a; /* dark text for contrast */
-      text-align: center;
-      padding: 60px 20px;
+      background-color: #fbb1c1; /* catchy pastel pink */
+      color: #4a4a4a;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* left aligned */
     }
     header h1 {
       margin: 0;
-      font-size: 3em;
+      font-size: 3.4em; /* bigger name */
       font-weight: 700;
+      font-family: 'Playfair Display', serif;
     }
     header p {
-      font-size: 1.2em;
+      font-size: 1.4em;
       margin-top: 10px;
+      font-weight: 500;
     }
 
     /* Section styling */
@@ -36,8 +43,8 @@
       padding: 0 20px;
     }
     h2 {
-      color: #b78ca1; /* muted pastel pink */
-      border-bottom: 2px solid #b78ca1;
+      color: #e58ca3; /* slightly brighter pastel pink */
+      border-bottom: 2px solid #e58ca3;
       padding-bottom: 5px;
       font-weight: 600;
     }
@@ -48,28 +55,28 @@
       padding: 20px;
       margin: 20px 0;
       border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
     }
 
     /* Accent for sections */
     .accent {
-      background-color: #fce8ee; /* soft pastel accent */
+      background-color: #ffe0eb; /* soft pastel accent */
     }
 
     /* Links */
     a {
-      color: #b78ca1;
+      color: #e58ca3;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
     }
     a:hover {
-      color: #a46d84; /* slightly darker on hover */
+      color: #d65f7e; /* slightly darker pink on hover */
       text-decoration: underline;
     }
 
@@ -78,17 +85,36 @@
       line-height: 1.6;
     }
 
+    /* Footer */
+    footer {
+      background-color: #fbb1c1;
+      color: #4a4a4a;
+      text-align: center;
+      padding: 20px;
+      font-size: 1em;
+      margin-top: 40px;
+      border-top: 1px solid #e58ca3;
+    }
+    footer a {
+      color: #4a4a4a;
+      font-weight: 600;
+    }
+    footer a:hover {
+      color: #d65f7e;
+    }
+
     /* Responsive */
     @media (max-width: 600px) {
-      section {
-        padding: 0 10px;
+      header {
+        align-items: center; /* center on small screens */
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Hafsa</h1>
+    <h1>Hafsa Issa</h1>
     <p>IT & CS Graduate</p>
   </header>
 
@@ -97,7 +123,7 @@
     <h2>About Me</h2>
     <div class="about">
       <p>
-        Hi! I’m Hafsa, an IT & CS graduate passionate about technology, programming, and AI. 
+        Hi! I’m Hafsa Issa, an IT & CS graduate passionate about technology, programming, and AI. 
         I specialize in building practical projects like SomaliBot, a Somali language chatbot.
         I love creating solutions that make technology accessible and helpful for everyone.
       </p>
@@ -128,5 +154,10 @@
       <p>Email: <a href="mailto:hafsaissa759@gmail.com">hafsaissa759@gmail.com</a></p>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer>
+    Connect with me on <a href="https://www.linkedin.com/in/hafsaissa/" target="_blank">LinkedIn</a> | Made by Hafsa Issa
+  </footer>
 </body>
 </html>
