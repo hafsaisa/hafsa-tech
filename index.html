@@ -15,74 +15,60 @@
       padding: 0;
     }
 
-    /* Header with gradient and image */
+    /* Header split layout */
     header {
-      background: linear-gradient(135deg, #c7a1e2, #b28edb);
-      color: #4a4a4a;
-      padding: 60px 40px;
       display: flex;
-      flex-direction: row;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       max-width: 900px;
-      margin-left: 10%;
-      border-radius: 0 0 20px 20px;
+      margin: 40px auto;
+      padding: 40px;
     }
-    .header-text {
-      max-width: 60%;
+
+    .header-left {
+      flex: 1;
+      background: linear-gradient(135deg, #c7a1e2, #b28edb);
+      padding: 40px;
+      border-radius: 20px 0 0 20px;
+      color: #4a4a4a;
     }
-    .header-text h1 {
+
+    .header-left h1 {
       margin: 0;
-      font-size: 3.4em; 
-      font-weight: 700;
+      font-size: 3.4em;
       font-family: 'Merriweather', serif;
     }
-    .header-text p {
+
+    .header-left p {
       font-size: 1.4em;
       margin-top: 10px;
-      font-weight: 500;
       font-family: 'Poppins', sans-serif;
     }
 
-    /* Wrapper for circular image with animated gradient */
-    .header-image-wrapper {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .header-image-wrapper:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    }
-
-    .profile-gradient {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      padding: 3px; /* creates a subtle border effect */
-      background: linear-gradient(270deg, #b28edb, #c7a1e2, #ede0f5);
-      background-size: 600% 600%;
-      animation: gradientAnimation 15s ease infinite;
+    .header-right {
+      width: 160px;
+      height: 220px;       /* rectangle height for full-body photo */
+      background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
+      border-radius: 0 20px 20px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .header-image {
+    .header-image-wrapper {
+      width: 140px;
+      height: 200px;       /* slightly smaller than container for padding */
+      overflow: hidden;
+      border-radius: 12px;  /* slight rounded corners */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .header-image-wrapper img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;    /* fills rectangle nicely */
       object-position: center;
-      border-radius: 50%;
-    }
-
-    @keyframes gradientAnimation {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
     }
 
     /* Section styling */
@@ -155,28 +141,30 @@
     @media (max-width: 600px) {
       header {
         flex-direction: column;
-        align-items: center; 
-        margin-left: 0;
-        text-align: center;
-        border-radius: 0;
+        padding: 20px;
       }
-      .header-text {
-        max-width: 100%;
+      .header-left, .header-right {
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        margin-bottom: 20px;
+      }
+      .header-right {
+        height: 220px;
       }
       .header-image-wrapper {
-        margin-top: 20px;
+        height: 200px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="header-text">
+    <div class="header-left">
       <h1>Hafsa Issa</h1>
       <p>IT & CS Graduate | Technology Enthusiast</p>
     </div>
-    <div class="header-image-wrapper">
-      <div class="profile-gradient">
+    <div class="header-right">
+      <div class="header-image-wrapper">
         <img src="Profile.JPG" alt="Hafsa Issa" class="header-image">
       </div>
     </div>
