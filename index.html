@@ -3,8 +3,9 @@
 <head>
   <title>Hafsa Issa | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Font Awesome CDN for stars -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-pVqvK+8Ue6Q1NhR1s0UvIecDnXgIyrv8dQYj7U5/n+FhZ0uFvU8J0pH4XJXvXyE+gDjr4NT8DRyZ0QYpK+vGhQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Correct Font Awesome CDN for stars -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dBwexN8fZ8Pb/wt4pPBhpo2jWmJss+OYX2/HnsFJymdS7Yd9GukD2PA5Z1U7W1m6I2O7ff/2jPcf3F2Z8wFjYg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     :root {
@@ -107,7 +108,7 @@
     .header-left h1 { margin:0; font-size:3em; font-family:'Merriweather', serif; }
     .header-left p { font-size:1.2em; margin-top:10px; }
     .header-right {
-      width: 320px; height: 440px; /* bigger profile */
+      width: 350px; height: 480px;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 12px 40px rgba(0,0,0,0.2);
@@ -143,7 +144,6 @@
     a { color: var(--accent-color); text-decoration:none; font-weight:500; transition: color 0.3s;}
     a:hover { color:#9462c1; text-decoration:underline;}
 
-    /* Stars rating */
     .interactive-stars i {
       font-size: 1.5em;
       color: #ddd;
@@ -264,7 +264,7 @@
     }, { threshold: 0.1 });
     sections.forEach(section => observer.observe(section));
 
-    // Stars interactive
+    // Interactive stars
     const stars = document.querySelectorAll('.interactive-stars i');
     const ratingValue = document.getElementById('rating-value');
     stars.forEach(star => {
