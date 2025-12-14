@@ -44,18 +44,12 @@
       font-family: 'Poppins', sans-serif; /* clean subtitle */
     }
 
-    /* Realistic placeholder profile with hover animation */
+    /* Profile image with hover animation */
     .header-image {
       width: 140px;
       height: 140px;
       border-radius: 50%;
-      background: radial-gradient(circle at top left, #d8c4eb, #b28edb);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: #fff;
-      font-size: 1em;
+      object-fit: cover; /* ensures photo fills circle nicely */
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       border: 3px solid #fff;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -153,11 +147,9 @@
   <header>
     <div class="header-text">
       <h1>Hafsa Issa</h1>
-      <p>IT & CS Graduate</p>
+      <p>IT & CS Graduate | Technology Enthusiast</p>
     </div>
-    <div class="header-image">
-      Photo
-    </div>
+    <img src="Profile.jpg" alt="Hafsa Issa" class="header-image">
   </header>
 
   <!-- About Me Section -->
