@@ -103,11 +103,12 @@
     }
 
     .header-right {
-      width: 180px; /* slightly bigger */
-      height: 260px;
+      width: 200px; /* slightly bigger */
+      height: 280px;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
     }
 
     .header-right img {
@@ -115,6 +116,17 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
+      transition: transform 0.5s ease;
+    }
+
+    /* Hover animation */
+    .header-right:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+    }
+
+    .header-right:hover img {
+      transform: scale(1.05);
     }
 
     /* Sections */
