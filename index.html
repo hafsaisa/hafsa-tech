@@ -9,31 +9,59 @@
     /* Font & Body */
     body {
       font-family: 'Poppins', Helvetica, Arial, sans-serif;
-      background-color: #fff4f8; /* soft pastel pink background */
+      background-color: #f9f8fc; /* very light lavender */
       color: #333;
       margin: 0;
       padding: 0;
     }
 
-    /* Header */
+    /* Header with gradient and image */
     header {
-      background-color: #fbb1c1; /* catchy pastel pink */
+      background: linear-gradient(135deg, #c7a1e2, #b28edb); /* soft lavender gradient */
       color: #4a4a4a;
       padding: 60px 40px;
       display: flex;
-      flex-direction: column;
-      align-items: flex-start; /* left aligned */
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 900px;
+      margin-left: 10%;
+      border-radius: 0 0 20px 20px;
     }
-    header h1 {
+    .header-text {
+      max-width: 60%; /* allows space for image */
+    }
+    .header-text h1 {
       margin: 0;
-      font-size: 3.4em; /* bigger name */
+      font-size: 3.4em; 
       font-weight: 700;
       font-family: 'Playfair Display', serif;
     }
-    header p {
+    .header-text p {
       font-size: 1.4em;
       margin-top: 10px;
       font-weight: 500;
+    }
+
+    /* Realistic placeholder profile with hover animation */
+    .header-image {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(circle at top left, #d8c4eb, #b28edb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #fff;
+      font-size: 1em;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border: 3px solid #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .header-image:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     }
 
     /* Section styling */
@@ -43,8 +71,8 @@
       padding: 0 20px;
     }
     h2 {
-      color: #e58ca3; /* slightly brighter pastel pink */
-      border-bottom: 2px solid #e58ca3;
+      color: #b892d8; /* lavender headings */
+      border-bottom: 2px solid #b892d8;
       padding-bottom: 5px;
       font-weight: 600;
     }
@@ -65,18 +93,18 @@
 
     /* Accent for sections */
     .accent {
-      background-color: #ffe0eb; /* soft pastel accent */
+      background-color: #ede0f5; /* light lavender accent */
     }
 
     /* Links */
     a {
-      color: #e58ca3;
+      color: #b892d8;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
     }
     a:hover {
-      color: #d65f7e; /* slightly darker pink on hover */
+      color: #9462c1; /* slightly darker lavender */
       text-decoration: underline;
     }
 
@@ -87,35 +115,48 @@
 
     /* Footer */
     footer {
-      background-color: #fbb1c1;
-      color: #4a4a4a;
+      background-color: #b28edb; /* darker lavender footer */
+      color: #fff;
       text-align: center;
       padding: 20px;
       font-size: 1em;
       margin-top: 40px;
-      border-top: 1px solid #e58ca3;
     }
     footer a {
-      color: #4a4a4a;
+      color: #fff;
       font-weight: 600;
     }
     footer a:hover {
-      color: #d65f7e;
+      color: #e0c6f0;
     }
 
     /* Responsive */
     @media (max-width: 600px) {
       header {
-        align-items: center; /* center on small screens */
+        flex-direction: column;
+        align-items: center; 
+        margin-left: 0;
         text-align: center;
+        border-radius: 0;
+      }
+      .header-text {
+        max-width: 100%;
+      }
+      .header-image {
+        margin-top: 20px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Hafsa Issa</h1>
-    <p>IT & CS Graduate</p>
+    <div class="header-text">
+      <h1>Hafsa Issa</h1>
+      <p>IT & CS Graduate</p>
+    </div>
+    <div class="header-image">
+      Photo
+    </div>
   </header>
 
   <!-- About Me Section -->
@@ -157,7 +198,7 @@
 
   <!-- Footer -->
   <footer>
-    Connect with me on <a href="https://www.linkedin.com/in/hafsaissa/" target="_blank">LinkedIn</a> | Made by Hafsa Issa
+    Connect with me on <a href="https://www.linkedin.com/in/hafsa-isse/" target="_blank">LinkedIn</a> | Made by Hafsa Issa
   </footer>
 </body>
 </html>
